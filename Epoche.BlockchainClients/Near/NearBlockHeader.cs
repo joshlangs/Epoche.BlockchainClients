@@ -10,6 +10,8 @@ public class NearBlockHeader
 
     [JsonPropertyName("timestamp_nanosec")]
     public string TimestampNanoseconds { get; init; } = default!;
+    [JsonPropertyName("gas_price")]
+    public string GasPrice { get; init; } = default!;
 
     [JsonIgnore] public DateTime Date => DateTimeOffset.FromUnixTimeMilliseconds(long.Parse(TimestampNanoseconds) / 1000000).UtcDateTime;
 }
